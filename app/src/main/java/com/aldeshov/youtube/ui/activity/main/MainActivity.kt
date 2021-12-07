@@ -35,12 +35,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import com.aldeshov.youtube.R
 import com.aldeshov.youtube.service.models.LiveStatus
+import com.aldeshov.youtube.service.models.navigation.MainNavigationItem
 import com.aldeshov.youtube.ui.activity.authenticate.AuthenticateActivity
 import com.aldeshov.youtube.ui.activity.main.account.AccountApp
 import com.aldeshov.youtube.ui.activity.main.content.ContentApp
 import com.aldeshov.youtube.ui.activity.main.contents.ListApp
+import com.aldeshov.youtube.ui.activity.main.drawer.DrawerApp
 import com.aldeshov.youtube.ui.templates.CenterScreenBox
 import com.aldeshov.youtube.ui.templates.ErrorWidget
 import com.aldeshov.youtube.ui.templates.TopScreenBox
@@ -135,7 +138,10 @@ fun MainNavigation(
                 navArgument("code") {
                     type = NavType.StringType
                 }
-            )
+            ),
+            deepLinks = listOf(navDeepLink {
+                uriPattern = "youtube://video/{code}"
+            })
         ) { entry ->
             entry.arguments?.getString("code")?.let {
                 ContentApp(code = it)
@@ -168,6 +174,8 @@ fun MainApp(mainViewModel: MainViewModel) {
 
     Scaffold(
         scaffoldState = scaffoldState,
+        drawerBackgroundColor = Color.White,
+        drawerContent = { DrawerApp() },
         topBar = {
             TopAppBar(
                 title = {
@@ -177,7 +185,11 @@ fun MainApp(mainViewModel: MainViewModel) {
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = {
+                        scope.launch {
+                            scaffoldState.drawerState.open()
+                        }
+                    }) {
                         Icon(
                             imageVector = Icons.Filled.Menu,
                             contentDescription = "Menu Button"

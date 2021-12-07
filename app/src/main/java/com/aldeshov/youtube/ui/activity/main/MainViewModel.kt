@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import com.aldeshov.youtube.service.models.LiveStatus
 import com.aldeshov.youtube.service.models.api.ResponseType
 import com.aldeshov.youtube.service.models.base.BaseComposeViewModel
+import com.aldeshov.youtube.service.models.navigation.MainNavigationItem
 import com.aldeshov.youtube.service.repositories.UserRepository
 
 class MainViewModel(private val userRepository: UserRepository) : BaseComposeViewModel() {

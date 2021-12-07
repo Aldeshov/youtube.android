@@ -68,6 +68,11 @@ fun DefaultViewModelScreen(
     toLoad: () -> Unit,
     emptyText: String,
     showWarningIcon: Boolean = true,
+    emptyWidget: @Composable () -> Unit = {
+        CenterScreenBox {
+            EmptyWidget(emptyText)
+        }
+    },
     onSuccessful: @Composable () -> Unit
 ) {
     if (viewModel.status == LiveStatus.NOTHING)
@@ -90,11 +95,8 @@ fun DefaultViewModelScreen(
         }
     }
 
-    if (viewModel.status == LiveStatus.LOADED_EMPTY) {
-        CenterScreenBox {
-            EmptyWidget(emptyText)
-        }
-    }
+    if (viewModel.status == LiveStatus.LOADED_EMPTY)
+        emptyWidget()
 
     if (viewModel.status == LiveStatus.LOADED_SUCCESSFUL)
         onSuccessful()

@@ -1,4 +1,4 @@
-package com.aldeshov.youtube.ui.activity.main
+package com.aldeshov.youtube.service.models.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox

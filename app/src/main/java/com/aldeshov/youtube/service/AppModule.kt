@@ -14,6 +14,7 @@ import com.aldeshov.youtube.ui.activity.main.account.ProfileViewModel
 import com.aldeshov.youtube.ui.activity.main.contents.ListViewModel
 import com.aldeshov.youtube.ui.activity.main.content.ContentViewModel
 import com.aldeshov.youtube.ui.activity.main.content.CommentsViewModel
+import com.aldeshov.youtube.ui.activity.main.drawer.DrawerViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -35,6 +36,7 @@ val appModule = module {
     single<ChannelRepository> { ChannelRepositoryImpl(get()) }
 
     viewModel { MainViewModel(get()) }
+    viewModel { DrawerViewModel(get()) }
     viewModel { LoginViewModel(get()) }
     viewModel { SignupViewModel(get()) }
     viewModel { ListViewModel(get(), get()) }

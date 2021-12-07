@@ -66,10 +66,12 @@ class ChannelRepositoryImpl(private val api: APIService): ChannelRepository {
             override fun onResponse(call: Call<Channel>, response: Response<Channel>?) {
                 if (response != null && response.isSuccessful)
                     onResult(true, response.body()!!)
-                if (response != null && response.code() == 400)
-                    onResult(true, null)
-                else
-                    onResult(false, null)
+                else {
+                    if (response != null && response.code() == 400)
+                        onResult(true, null)
+                    else
+                        onResult(false, null)
+                }
             }
 
             override fun onFailure(call: Call<Channel>, t: Throwable) {

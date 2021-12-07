@@ -14,10 +14,10 @@
         android:theme="@style/Theme.YouTube">
         <activity
             android:name=".ui.activity.authenticate.AuthenticateActivity"
-            android:label="@string/app_name"
             android:exported="true"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:theme="@style/Theme.YouTube.NoActionBar" />
+            android:label="@string/app_name"
+            android:theme="@style/Theme.YouTube.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".ui.activity.main.MainActivity"
             android:exported="true"
@@ -28,6 +28,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="video"
+                    android:scheme="youtube" />
+            </intent-filter>
+
         </activity>
     </application>
 
