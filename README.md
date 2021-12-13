@@ -23,4 +23,6 @@ CONFIG FILE.
 
 ## How does it look like
 
-![Preview, movie](previews/movie.mp4)
+<a href='https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4'>
+Preview movie<br/>
+</a>
