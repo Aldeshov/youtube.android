@@ -1,4 +1,5 @@
 # YouTube Android App
+
 This Android (educational) project presents simple <br/>
 (only with basic functionalities) Android app for YouTube platform
 
@@ -13,16 +14,26 @@ CONFIG FILE.
 
 ## This Android app has features like
 
-* User Authentication (JWT Authentication)
-    * Profile
+* User Authentication
+    * Logging in
+    * Signing up
+    * Viewing profile
 * Channel (Read-only)
     * Playlists
     * Contents
         * Comments
-    
+
+## Tools used in this project:
+
+* MVVM architecture
+* Jetpack Compose
+* Koin (dependency injection)
+* Room Database
+* OkHttp3 and Retrofit
+* JUnit4 and Android Tests
 
 ## How does it look like
 
 <a href='https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4'>
-Preview movie<br/>
+* Preview movie<br/>
 </a>
