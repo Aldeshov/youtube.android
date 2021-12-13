@@ -1,5 +1,5 @@
 # YouTube Android App
-This Android (educational) project presents simple 
+This Android (educational) project presents simple <br/>
 (only with basic functionalities) Android app for YouTube platform
 
 ---
