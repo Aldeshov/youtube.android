@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YouTube">
+        android:theme="@style/Theme.YouTube"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.activity.authenticate.AuthenticateActivity"
             android:exported="true"
