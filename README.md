@@ -35,5 +35,5 @@ CONFIG FILE.
 ## How does it look like
 
 <a href='https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4'>
-* Preview movie
+• Preview movie<br/>
 </a>
