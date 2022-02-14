@@ -1,5 +1,6 @@
 package com.aldeshov.youtube.ui.activity.main.content.views
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,13 +21,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.aldeshov.youtube.BASE_URL
-import com.aldeshov.youtube.R
 import com.aldeshov.youtube.service.models.LiveStatus
 import com.aldeshov.youtube.service.models.api.applications.SubscribeStatusType
 import com.aldeshov.youtube.service.models.api.content.LikeStatusType
@@ -239,7 +238,8 @@ fun VideoContentChannel(
 fun VideoContent(contentViewModel: ContentViewModel, commentsViewModel: CommentsViewModel) {
     val context = LocalContext.current
     val scrollState = rememberLazyListState()
-    val uri = stringResource(R.string.placeholder_video, BASE_URL)
+    val uri = "$BASE_URL${contentViewModel.videoContent.video}"
+    Log.e("CHECK", uri)
     val exoPlayer = remember(contentViewModel) {
         ExoPlayer.Builder(context).build().also { exoPlayer ->
             exoPlayer.setMediaItem(MediaItem.fromUri(uri))
