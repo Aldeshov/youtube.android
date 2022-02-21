@@ -34,4 +34,6 @@ CONFIG FILE.
 
 How does it look like
 
-https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4
+https://user-images.githubusercontent.com/47108137/154905483-f1861c08-3f33-4730-a945-ae9dd1cd4236.mp4
+
+
