@@ -32,8 +32,6 @@ CONFIG FILE.
 * OkHttp3 and Retrofit
 * JUnit4 and Android Tests
 
-## How does it look like
+How does it look like
 
-<a href='https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4'>
-• Preview movie<br/>
-</a>
+https://raw.githubusercontent.com/Aldeshov/youtube.android/master/previews/movie.mp4
